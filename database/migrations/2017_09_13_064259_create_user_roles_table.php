@@ -13,8 +13,8 @@ class CreateUserRolesTable extends Migration {
      */
     public function up() {
         Schema::create('user_roles', function (Blueprint $table) {
-            $table->unsignedInteger('users_id');
-            $table->unsignedInteger('roles_id');
+            $table->integer('users_id');
+            $table->integer('roles_id');
             $table->index("roles_id");
             $table->index("users_id");
             $table->unique(["users_id", "roles_id", "deleted_at"]);
