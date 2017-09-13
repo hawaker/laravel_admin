@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Group;
 
 use Illuminate\Http\Request;
-use App\Models\permission_group;
-use App\Models\permissions;
-use App\Utils\ajaxDone;
+use App\Http\Controllers\Controller;
 
-class PermissionController extends Controller {
-
+class RoleController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $groups= permission_group::select("id","name")->all()->toArray();
-        return view("permission/index", compact($groups));
+    public function index()
+    {
+        //
     }
 
     /**
@@ -24,7 +22,8 @@ class PermissionController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
     }
 
@@ -34,7 +33,8 @@ class PermissionController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         //
     }
 
@@ -44,14 +44,9 @@ class PermissionController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id) {
-        $group= permission_group::find($id);
-        if($group){
-            $permissions=permissions::where("groups_id",$id)->get()->toArray();
-            return view("permission/list_permission", compact("permissions","id"));
-        }else{
-            return ajaxDone::success(false)->message("您查找的权限组不存在!")->out();
-        }
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -60,7 +55,8 @@ class PermissionController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
@@ -71,7 +67,8 @@ class PermissionController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         //
     }
 
@@ -81,7 +78,8 @@ class PermissionController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
     }
 }

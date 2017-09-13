@@ -9,9 +9,11 @@
             <div>
                 <div layoutH="100" style="float:left; display:block; overflow:auto; width:240px; border:solid 1px #CCC; line-height:21px; background:#fff">
                     <ul class="tree treeFolder">
-                        <li><a href="permission/groups">全部分组</a>
+                        <li><a href="permission/show" target="ajax" rel="permissionBox">全部分组</a>
                             <ul>
-                                <li><a href="permission/group/" target="ajax" rel="permissionBox">尿检</a></li>
+                                @foreach($groups as $value)
+                                <li><a href="permission/show/{{$value['id']}}" target="ajax" rel="permissionBox">{{$value['name']}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>

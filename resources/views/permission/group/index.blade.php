@@ -1,5 +1,5 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
-    <form id="pagerForm" onsubmit="return divSearch(this, 'jbsxBox');" action="demo/pagination/list1.html" method="post">
+    <form id="pagerForm"  action="permission/groups" method="post"onsubmit="return divSearch(this,navTabAjaxDone);">
         <input type="hidden" name="pageNum" value="1" />
         <input type="hidden" name="numPerPage" value="${model.numPerPage}" />
         <input type="hidden" name="orderField" value="${param.orderField}" />
@@ -7,20 +7,9 @@
         <div class="searchBar">
             <table class="searchContent">
                 <tr>
-                    <td class="dateRange">
-                        尿检日期:
-                        <input type="text" value="" readonly="readonly" class="date" name="dateStart">
-                        <span class="limit">-</span>
-                        <input type="text" value="" readonly="readonly" class="date" name="dateEnd">
-                    </td>
-                    <td>
-                        尿检结果：
-                        <input type="radio" name="njjg" value="" checked="checked" />全部
-                        <input type="radio" name="njjg" value="1"/>阴性
-                        <input type="radio" name="njjg" value="2"/>阳性
-                    </td>
-                    <td>病人编号：<input type="text" name="keyword" /></td>
-                    <td><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></td>
+                    <td>组名称：<input type="text" name="name" /></td>
+                    <td><div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div></td>
+                    <td><div class="button"><div class="buttonContent"><button type="reset">重置</button></div></div></td>
                 </tr>
             </table>
         </div>
@@ -29,9 +18,7 @@
 <div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid">
     <div class="panelBar">
         <ul class="toolBar">
-            <li><a class="add" href="demo/pagination/dialog2.html" target="dialog" mask="true"><span>添加尿检检测</span></a></li>
-            <li><a class="delete" href="demo/pagination/ajaxDone3.html?uid={sid_obj}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-            <li><a class="edit" href="demo/pagination/dialog2.html?uid={sid_obj}" target="dialog" mask="true"><span>修改</span></a></li>
+            <li><a class="add" href="permission/groups/create" target="dialog" mask="true"><span>添加权限分组</span></a></li>
             <li class="line">line</li>
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
