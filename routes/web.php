@@ -26,3 +26,8 @@ Route::get("/",function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::perfix("permission")->group(function(){
+    $c="PermissionController@";
+    Route::get("index",$c."index");
+});
