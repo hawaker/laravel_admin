@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\permission_group;
+use App\Models\permissions;
 
 class PermissionController extends Controller {
 
@@ -74,5 +76,8 @@ class PermissionController extends Controller {
     public function destroy($id) {
         //
     }
-
+    public function groups(Request $request){
+        $groups=permission_group::all()->toArray();
+        return view("permission/list_group", compact($groups));
+    }
 }

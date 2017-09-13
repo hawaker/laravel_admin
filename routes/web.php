@@ -30,4 +30,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix("permission")->group(function(){
     $c="PermissionController@";
     Route::get("index",$c."index");
+    Route::get("groups",$c."groups");
 });
