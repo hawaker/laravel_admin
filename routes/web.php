@@ -38,6 +38,7 @@ Route::prefix("permission")->group(function() {
         Route::get("edit/{id}", $c . "edit");
         Route::post("edit/{id}", $c . "edit");
         Route::any("/", $c . "index");
+        Route::any("lookup", $c . "lookup");
     });
     Route::get("show/{id}", $c . "show");
 });

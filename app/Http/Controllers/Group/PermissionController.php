@@ -14,7 +14,7 @@ class PermissionController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index(Request $request) {
         $groups = permission_group::all()->toArray();
         return view("permission/group/index", compact("groups"));
     }
@@ -93,5 +93,8 @@ class PermissionController extends Controller {
     public function destroy($id) {
         //
     }
-
+    public function lookup(){
+        $groups= permission_group::all()->toArray();
+        return view("permission/group/lookup", compact("groups"));
+    }
 }

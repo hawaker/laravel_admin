@@ -33,22 +33,12 @@ class ajaxDone {
     public $callbackType = "";
     public $rel = "";
 
-    private function success($suc) {
-        if (is_array($suc) && count($suc) > 0) {
-            $suc = $suc[0];
-        } else {
-            $suc = true;
-        }
+    private function success($suc = false) {
         if ($suc) {
             $this->statusCode = self::SUCCESS;
         } else {
             $this->statusCode = self::FAILURE;
         }
-        return $this;
-    }
-
-    private function failure() {
-        $this->statusCode = self::FAILURE;
         return $this;
     }
 
@@ -69,9 +59,7 @@ class ajaxDone {
 
     private function forward($url) {
         $this->forwardUrl = $url;
-        if ($this->forwardUrl) {
-            $this->callbackType = self::FORWARD;
-        }
+        $this->callbackType = self::FORWARD;
         return $this;
     }
 
@@ -88,7 +76,7 @@ class ajaxDone {
     private function autoClose() {
         if (!$this->callbackType) {
             if ($this->statusCode == self::SUCCESS) {
-                $this->callbackType = self::CLOSE;
+                $this->close();
             }
         }
         return $this;
@@ -124,5 +112,4 @@ class ajaxDone {
         $this->autoMessage();
         return json_encode($this);
     }
-
 }

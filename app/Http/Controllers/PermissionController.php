@@ -14,9 +14,9 @@ class PermissionController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index(Request $request) {
         $groups= permission_group::select("id","name")->all()->toArray();
-        return view("permission/index", compact($groups));
+        return view("permission/index", compact('groups'));
     }
 
     /**
@@ -48,7 +48,7 @@ class PermissionController extends Controller {
         $group= permission_group::find($id);
         if($group){
             $permissions=permissions::where("groups_id",$id)->get()->toArray();
-            return view("permission/list_permission", compact("permissions","id"));
+            return view("permission/list", compact("permissions","id"));
         }else{
             return ajaxDone::success(false)->message("您查找的权限组不存在!")->out();
         }
