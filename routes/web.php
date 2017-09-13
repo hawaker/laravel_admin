@@ -11,8 +11,7 @@
 |
 */
 Route::get("/",function(){
-    return "welcome";
-    //return view("welcome");
+    return view("welcome");
 });
     Route::any("{file}.html", function($file) {
         return view($file);
