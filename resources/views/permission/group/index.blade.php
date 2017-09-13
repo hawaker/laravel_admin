@@ -23,14 +23,14 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="40">
+    <table class="table" width="99%" layoutH="60">
         <thead>
             <tr>
                 <th width="80">序号</th>
                 <th width="120" orderField="number" class="asc">名称</th>
                 <th>描述</th>
                 <th>创建时间</th>
-                <td>编辑</td>
+                <th>编辑</th>
             </tr>
         </thead>
         <tbody>
