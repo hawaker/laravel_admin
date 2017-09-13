@@ -3,7 +3,7 @@
     ul.rightTools li{float:left; display:block; margin-left:5px}
 </style>
 <div class="pageContent" style="padding:5px">
-    <!--<div class="panel" defH="40">
+    <div class="panel" defH="40">
         <h1>病人基本信息</h1>
         <div>
             病人编号：<input type="text" name="patientNo" />
@@ -15,13 +15,13 @@
             </ul>
         </div>
     </div>
-    <div class="divider"></div>-->
+    <div class="divider"></div>
     <div class="tabs">
         <div class="tabsHeader">
             <div class="tabsHeaderContent">
                 <ul>
                     <li><a href="javascript:;"><span>实验室检测</span></a></li>
-                    <li><a href="javascript:;"><span>病人处方</span></a></li>
+                    <li><a href="javascript:;"><span>权限分组</span></a></li>
                     <li><a href="javascript:;"><span>病人服药情况</span></a></li>
                     <li><a href="javascript:;"><span>基线调查</span></a></li>
                     <li><a href="javascript:;"><span>随访</span></a></li>
@@ -40,20 +40,15 @@
                                 <li><a href="demo/pagination/list1.html" target="ajax" rel="jbsxBox">TB检测</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
-                <div id="jbsxBox" class="unitBox" style="margin-left:246px;">
-                    <!--#include virtual="list1.html" -->
-                </div>
+                <div id="jbsxBox" class="unitBox" style="margin-left:246px;"></div>
             </div>
             <div>病人处方</div>
             <div>病人服药情况</div>
             <div>基线调查</div>
             <div>随访</div>
         </div>
-        <div class="tabsFooter">
-            <div class="tabsFooterContent"></div>
-        </div>
+        <div class="tabsFooter"><div class="tabsFooterContent"></div></div>
     </div>
 </div>
