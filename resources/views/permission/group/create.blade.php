@@ -2,7 +2,7 @@
     <form method="post" action="permission/groups/create" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
         <div class="pageFormContent" layoutH="56">
             <p><label>分组名称：</label><input name="name" type="text" size="30" required="required"/></p>
-            <p><label>分组描述：</label><textarea name="desp"></textarea></p>
+            <p><label>分组描述：</label><textarea name="desp" size="30"></textarea></p>
         </div>
         <div class="formBar">
             <ul>
