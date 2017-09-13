@@ -258,9 +258,23 @@
                         </div>
                         <div class="accordionContent">
                             <ul class="tree">
-                                <li><a href="permission/index" target="navTab" rel="permission.index">权限设置</a></li>
-                                <li><a href="role/index" target="navTab" rel="role.index">角色设置</a></li>
-                                <li><a href="user/index" target="navTab" rel="user.index">用户设置</a></li>
+                                <li><a>权限</a>
+                                    <ul>
+                                        <li><a href="permission/groups" target="navTab" rel="roles.groups">权限分组</a></li>
+                                        <li><a href="permission/index" target="navTab" rel="roles.index">权限列表</a></li>
+                                    </ul>
+                                </li>
+                                <li><a>角色</a>
+                                    <ul>
+                                        <li><a href="role/groups" target="navTab" rel="roles.groups">角色分组</a></li>
+                                        <li><a href="role/index" target="navTab" rel="roles.index">角色列表</a></li>
+                                    </ul></li>
+                                <li><a>用户</a>
+                                    <ul>
+                                        <li><a href="user/groups" target="navTab" rel="users.groups">用户分组</a></li>
+                                        <li><a href="user/index" target="navTab" rel="users.index">用户列表</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
