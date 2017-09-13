@@ -23,3 +23,7 @@ Route::get("/",function(){
     Route::any("{dict}/{folder}/{file}.html", function($dict, $folder, $file) {
         return view($dict . "/" . $folder . "/" . $file);
     });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
