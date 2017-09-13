@@ -43,6 +43,7 @@ Route::prefix("permission")->group(function() {
     });
     Route::get("show/{id}", $c . "show");
 });
+
 Route::prefix("role")->group(function() {
     $c = "RoleController@";
     Route::get("index", $c . "index");
