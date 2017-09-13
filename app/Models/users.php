@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class users extends Authenticatable
-{
+class users extends Authenticatable {
+
+    use SoftDeletes;
     use Notifiable;
 
     /**
@@ -26,4 +28,5 @@ class users extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
