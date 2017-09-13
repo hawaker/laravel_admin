@@ -23,7 +23,7 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="260" rel="jbsxBox">
+    <table class="table" width="99%">
         <thead>
             <tr>
                 <th width="80">序号</th>
