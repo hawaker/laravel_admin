@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::any("{file}.html", function($file) {
+        return view($file);
+    });
+    Route::any("{folder}/{file}.html", function($folder, $file) {
+        return view($folder . "/" . $file);
+    });
+    Route::any("{dict}/{folder}/{file}.html", function($dict, $folder, $file) {
+        return view($dict . "/" . $folder . "/" . $file);
+    });
