@@ -42,7 +42,7 @@ Route::prefix("permission")->group(function() {
         Route::any("/", $c . "index");
         Route::any("lookup", $c . "lookup");
     });
-    Route::get("show/{id}", $c . "show");
+    Route::any("show/{id}", $c . "show");
 });
 
 Route::prefix("role")->group(function() {

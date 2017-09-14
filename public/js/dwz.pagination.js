@@ -52,7 +52,14 @@
 					$button.click(function(event){
 						var pageNum = $inputBox.val();
 						if (pageNum && pageNum.isPositiveInteger()) {
-							dwzPageBreak({targetType:pc.targetType(), rel:pc.rel(), data: {pageNum:pageNum}});
+                                                                                                                     //add time:2017-9-14 18:51:22
+                                                                                                                     //if the pageNum is big then max page do nothing
+                                                                                                                     if(pageNum>pc.numPages()){
+                                                                                                                         console.log("pageNum should less then "+pc.numPages());
+                                                                                                                         return;
+                                                                                                                     }
+                                                                                                                     //add over
+                                                                                                                    dwzPageBreak({targetType:pc.targetType(), rel:pc.rel(), data: {pageNum:pageNum}});
 						}
 					});
 					$inputBox.keyup(function(event){

@@ -1,6 +1,6 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
     <form id="pagerForm"  action="permission/groups" method="post"onsubmit="return divSearch(this,navTabAjaxDone);">
-        <input type="hidden" name="pageNum" value="1" />
+        <input type="hidden" name="page" value="1" />
         <input type="hidden" name="numPerPage" value="${model.numPerPage}" />
         <input type="hidden" name="orderField" value="${param.orderField}" />
         <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
@@ -23,12 +23,12 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="60">
+    <table class="table" width="99%" layoutH="115">
         <thead>
             <tr>
                 <th width="80">序号</th>
                 <th width="120" orderField="number" class="asc">名称</th>
-                <th>描述</th>
+                <th>详情</th>
                 <th>创建时间</th>
                 <th>编辑</th>
             </tr>
@@ -45,5 +45,5 @@
             @endforeach
         </tbody>
     </table>
-    {{$groups->dwzpage}}
+    {{$groups->links()}}
 </div>

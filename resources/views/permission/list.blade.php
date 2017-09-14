@@ -1,6 +1,6 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
-    <form id="pagerForm" action="permission/index" method="post" onsubmit="return divSearch(this, navTabAjaxDone);">
-        <input type="hidden" name="pageNum" value="1" />
+    <form id="pagerForm" action="permission/show/0" method="post" onsubmit="return divSearch(this, navTabAjaxDone);">
+        <input type="hidden" name="page" value="1" />
         <input type="hidden" name="numPerPage" value="${model.numPerPage}" />
         <input type="hidden" name="orderField" value="${param.orderField}" />
         <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
@@ -27,7 +27,7 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="150" rel="jbsxBox">
+    <table class="table" width="99%" layoutH="150">
         <thead>
             <tr>
                 <th width="80">序号</th>
@@ -49,17 +49,5 @@
             @endforeach
         </tbody>
     </table>
-    <div class="panelBar">
-        <div class="pages">
-            {{$permissions->links()}}
-            
-            <span>显示</span>
-            <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage: this.value}, 'jbsxBox')">
-                <option value="20">20</option>
-                <option value="50">50</option>
-            </select>
-            <span>条，共50条</span>
-        </div>
-        <div class="pagination" rel="permissionBox" totalCount="200" numPerPage="20" pageNumShown="5" currentPage="1"></div>
-    </div>
+    {{$permissions->links('',['rel'=>"permissionBox",'type'=>'navTab'])}}
 </div>
