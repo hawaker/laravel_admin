@@ -22,7 +22,7 @@
                 <td>{{$group['name']}}</td>
                 <td>{{$group['desp']}}</td>
                 <td>{{$group['created_at']}}</td>
-                <td><a class="btnSelect" href="javascript:$.bringBack({id:'{{$group['id']}}', orgName:'{{$group['name']}}'})" title="查找带回">选择</a></td>
+                <td><a class="btnSelect" href="javascript:$.bringBack({id:'{{$group['id']}}', Name:'{{$group['name']}}'})" title="查找带回">选择</a></td>
             </tr>
             @endforeach
         </tbody>

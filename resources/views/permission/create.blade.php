@@ -3,8 +3,9 @@
         <div class="pageFormContent" layoutH="56">
             <p><label>权限名称:</label><input name="name" type="text" size="30" required="required"/></p>
             <p><label>权限分组:</label>
-                <input class="required" name="groups_id" type="text" postField="keyword" lookupGroup="org1"/>
-                <a class="btnLook" href="permission/groups/lookup" lookupGroup="org1">查找带回</a>
+                <input type="hidden" name="groups.id">
+                <input class="required" name="groups.name" type="text" postField="keyword" lookupGroup="group"/>
+                <a class="btnLook" href="permission/groups/lookup" lookupGroup="group">查找带回</a>
             </p>
             <p><label>权限描述:</label><textarea name="desp" cols="30"></textarea></p>
         </div>
