@@ -7,9 +7,9 @@
         </div>
         <div class="tabsContent">
             <div>
-                <div layoutH="100" style="float:left; display:block; overflow:auto; width:240px; border:solid 1px #CCC; line-height:21px; background:#fff">
+                <div layoutH="40" style="float:left; display:block; overflow:auto; width:240px; border:solid 1px #CCC; line-height:21px; background:#fff">
                     <ul class="tree treeFolder">
-                        <li><a href="permission/show" target="ajax" rel="permissionBox">全部分组</a>
+                        <li><a href="permission/show/0" target="ajax" rel="permissionBox">全部分组</a>
                             <ul>
                                 @foreach($groups as $value)
                                 <li><a href="permission/show/{{$value['id']}}" target="ajax" rel="permissionBox">{{$value['name']}}</a></li>

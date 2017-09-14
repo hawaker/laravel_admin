@@ -7,5 +7,4 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class permission_group extends Model {
     use SoftDeletes;
-    //
 }

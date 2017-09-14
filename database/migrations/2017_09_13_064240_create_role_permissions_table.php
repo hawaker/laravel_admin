@@ -21,6 +21,7 @@ class CreateRolePermissionsTable extends Migration
             $table->unique(["roles_id","permissions_id","deleted_at"]);
             $table->foreign("roles_id")->references("id")->on("roles");
             $table->foreign("permissions_id")->references("id")->on("permissions");
+            $table->unsignedInteger("created_id");
             $table->softDeletes();
             $table->timestamps();
         });

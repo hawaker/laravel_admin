@@ -15,7 +15,7 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $groups= permission_group::all()->toArray();
+        $groups = permission_group::all();
         return view("permission/index", compact('groups'));
     }
 
@@ -35,25 +35,30 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $input=$request->input();
-        if(isset($input['org1.id'])&&isset($input['name'])){
-            $group= permission_group::find($input['org1.id'])->count();
-            if($group<=0){
+        $input = $request->input();
+        if (isset($input['org1_id']) && isset($input['name'])) {
+            $group = permission_group::find($input['org1_id'])->count();
+            if ($group <= 0) {
                 return ajaxDone::success(false)->message("权限分组错误!");
             }
-            $exists= permissions::where("name",$input['name'])->count();
-            if($exists>0){
+            $exists = permissions::where([
+                        ['name', $input['name']],
+                        ['groups_id', $input['org1_id']]
+                ])->count();
+            if ($exists > 0) {
                 return ajaxDone::success(false)->message("权限名称重复!");
             }
-            $p=new permissions();
-            $p->name=$input['name'];
-            $p->groups_id=$input['org1.id'];
-            if(isset($input['desp'])){
-                $p->desp=$input['desp'];
+            $p = new permissions();
+            $p->name = $input['name'];
+            $p->groups_id = $input['org1_id'];
+            if (isset($input['desp'])) {
+
+                $p->desp = $input['desp'];
             }
-            $done=$p->save();
+            $done = $p->save();
             return ajaxDone::success($done)->autoClose();
         }
+        return ajaxDone::success(false)->message("参数不完整!");
     }
 
     /**
@@ -62,13 +67,21 @@ class PermissionController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id) {
-        $group= permission_group::find($id);
-        if($group){
-            $permissions=permissions::where("groups_id",$id)->get()->toArray();
-            return view("permission/list", compact("permissions","id"));
-        }else{
-            return ajaxDone::success(false)->message("您查找的权限组不存在!")->out();
+    public function show(Request $request, $id) {
+        if ($id == 0) {
+            $group = permission_group::all()->count();
+        } else {
+            $group = permission_group::find($id)->count();
+        }
+        if ($group > 0) {
+            if ($id == 0) {
+                $permissions = permissions::paginate(10);
+            } else {
+                $permissions = permissions::where("groups_id", $id)->paginate(10);
+            }
+            return view("permission/list", compact("permissions", "id"));
+        } else {
+            return ajaxDone::success(false)->message("您查找的权限组不存在!");
         }
     }
 
@@ -102,4 +115,5 @@ class PermissionController extends Controller {
     public function destroy($id) {
         //
     }
+
 }

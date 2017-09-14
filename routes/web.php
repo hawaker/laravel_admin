@@ -29,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix("permission")->group(function() {
     $c = "PermissionController@";
-    Route::get("index", $c . "index");
+    Route::any("index", $c . "index"); 
     Route::get("create", $c . "create");
     Route::post("create", $c . "store");
     Route::prefix("groups")->namespace("Group")->group(function() {

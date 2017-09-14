@@ -46,6 +46,7 @@
         </tbody>
     </table>
     <div class="panelBar">
+        {{$groups->links()}}
         <div class="pages">
             <span>显示</span>
             <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage: this.value}, 'jbsxBox')">

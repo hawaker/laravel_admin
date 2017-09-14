@@ -16,6 +16,7 @@ class CreatePermissionGroupsTable extends Migration {
             $table->increments('id');
             $table->char("name", 50)->unique();
             $table->string("desp", 100);
+            $table->unsignedInteger("created_id");
             $table->softDeletes();
             $table->timestamps();
         });

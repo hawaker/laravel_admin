@@ -16,6 +16,7 @@ class CreateUserGroupsTable extends Migration {
             $table->increments('id');
             $table->char("name", 50)->unquie();
             $table->string("desp", 100);
+            $table->unsignedInteger("created_id");
             $table->softDeletes();
             $table->timestamps();
         });

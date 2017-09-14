@@ -20,6 +20,7 @@ class CreateUserRolesTable extends Migration {
             $table->unique(["users_id", "roles_id", "deleted_at"]);
             $table->foreign("roles_id")->references("id")->on("roles");
             $table->foreign("users_id")->references("id")->on("users");
+            $table->unsignedInteger("created_id");
             $table->softDeletes();
             $table->timestamps();
         });

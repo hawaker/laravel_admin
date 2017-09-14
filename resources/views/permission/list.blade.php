@@ -27,7 +27,7 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="260" rel="jbsxBox">
+    <table class="table" width="99%" layoutH="150" rel="jbsxBox">
         <thead>
             <tr>
                 <th width="80">序号</th>
@@ -51,6 +51,8 @@
     </table>
     <div class="panelBar">
         <div class="pages">
+            {{$permissions->links()}}
+            
             <span>显示</span>
             <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage: this.value}, 'jbsxBox')">
                 <option value="20">20</option>
@@ -58,6 +60,6 @@
             </select>
             <span>条，共50条</span>
         </div>
-        <div class="pagination" rel="jbsxBox" totalCount="200" numPerPage="20" pageNumShown="5" currentPage="1"></div>
+        <div class="pagination" rel="permissionBox" totalCount="200" numPerPage="20" pageNumShown="5" currentPage="1"></div>
     </div>
 </div>
