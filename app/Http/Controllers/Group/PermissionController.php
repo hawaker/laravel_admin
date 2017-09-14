@@ -15,7 +15,8 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $groups = permission_group::all()->paginate(3);
+        var_dump( request());
+        $groups = permission_group::all();
         return view("permission/group/index", compact("groups"));
     }
 
