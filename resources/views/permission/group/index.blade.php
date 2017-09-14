@@ -45,15 +45,5 @@
             @endforeach
         </tbody>
     </table>
-    <div class="panelBar">
-        <div class="pages">
-            <span>显示</span>
-            <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage: this.value}, 'jbsxBox')">
-                <option value="20">20</option>
-                <option value="50">50</option>
-            </select>
-            <span>条，共50条</span>
-        </div>
-        <div class="pagination" rel="jbsxBox" totalCount="200" numPerPage="20" pageNumShown="5" currentPage="1"></div>
-    </div>
+    {{$groups->dwzpage}}
 </div>

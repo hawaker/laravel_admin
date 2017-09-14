@@ -15,8 +15,7 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        var_dump( request());
-        $groups = permission_group::all();
+        $groups = permission_group::orderBy("id",'asc')->dwzPage()->get();
         return view("permission/group/index", compact("groups"));
     }
 
