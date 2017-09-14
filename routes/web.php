@@ -14,7 +14,7 @@ Route::get("/", function() {
     return view("welcome");
 });
 Route::any("{file}.html", function($file) {
-    return view($file);
+    return view("demo/".$file);
 });
 Route::any("{folder}/{file}.html", function($folder, $file) {
     return view($folder . "/" . $file);
@@ -31,6 +31,7 @@ Route::prefix("permission")->group(function() {
     $c = "PermissionController@";
     Route::get("index", $c . "index");
     Route::get("create", $c . "create");
+    Route::post("create", $c . "store");
     Route::prefix("groups")->namespace("Group")->group(function() {
         $c = "PermissionController@";
         Route::get("create", $c . "create");

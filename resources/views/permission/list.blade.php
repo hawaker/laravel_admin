@@ -22,7 +22,7 @@
 <div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid">
     <div class="panelBar">
         <ul class="toolBar">
-            <li><a class="add" href="permission/create" target="dialog" mask="true"><span>添加权限</span></a></li>
+            <li><a class="add" href="permission/create" target="dialog" rel="permission.create" mask="true"><span>添加权限</span></a></li>
             <li class="line">line</li>
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>

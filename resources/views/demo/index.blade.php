@@ -34,12 +34,12 @@
             <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6PYkS1eDz5pMnyfO0jvBNE0F"></script>
             <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
 
-            <script src="js/dwz.core.js" type="text/javascript"></script>
+            <script src="js/dwz.core.js?v=1" type="text/javascript"></script>
             <script src="js/dwz.util.date.js" type="text/javascript"></script>
             <script src="js/dwz.validate.method.js" type="text/javascript"></script>
             <script src="js/dwz.barDrag.js" type="text/javascript"></script>
             <script src="js/dwz.drag.js" type="text/javascript"></script>
-            <script src="js/dwz.tree.js" type="text/javascript"></script>
+            <script src="js/dwz.tree.js?v=1" type="text/javascript"></script>
             <script src="js/dwz.accordion.js" type="text/javascript"></script>
             <script src="js/dwz.ui.js" type="text/javascript"></script>
             <script src="js/dwz.theme.js" type="text/javascript"></script>

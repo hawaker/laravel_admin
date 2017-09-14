@@ -100,6 +100,7 @@ var DWZ = {
 		}
 	},
 	ajaxError:function(xhr, ajaxOptions, thrownError){
+                                    console.info(xhr);
 		if (alertMsg) {
 			alertMsg.error("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" 
 				+ "<div>ajaxOptions: "+ajaxOptions + "</div>"
@@ -110,6 +111,7 @@ var DWZ = {
 		}
 	},
 	ajaxDone:function(json){
+                                    console.info(json);
 		if(json[DWZ.keys.statusCode] == DWZ.statusCode.error) {
 			if(json[DWZ.keys.message] && alertMsg) alertMsg.error(json[DWZ.keys.message]);
 		} else if (json[DWZ.keys.statusCode] == DWZ.statusCode.timeout) {

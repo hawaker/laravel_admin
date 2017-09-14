@@ -35,7 +35,7 @@
 								ckbox.click(function(){
 									var checked = $(ckbox).hasClass("checked");
 									var items = [];
-									if(checked){
+									//if(checked){
 										var tnode = $(ckbox).parent().parent();
 										var boxes = $("input", tnode);
 										if(boxes.size() > 1) {
@@ -45,7 +45,7 @@
 										} else {
 											items = {name:boxes.attr("name"), value:boxes.val(), text:boxes.attr("text")};
 										}		
-									}								
+									//}								
 									checkFn({checked:checked, items:items});														
 								});
 							});

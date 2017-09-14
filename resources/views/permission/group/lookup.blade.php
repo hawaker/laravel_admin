@@ -4,6 +4,20 @@
     <input type="hidden" name="orderField" value="${param.orderField}" />
     <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
 </form>
+<div class="pageHeader">
+    <form rel="pagerForm" method="post" action="demo/database/dwzOrgLookup.html" onsubmit="return dwzSearch(this, 'dialog');">
+        <div class="searchBar">
+            <ul class="searchContent">
+                <li><label>分组名称:</label><input class="textInput" name="orgName" value="" type="text"></li>	  
+            </ul>
+            <div class="subBar">
+                <ul>
+                    <li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
 <div class="pageContent">
     <table class="table" layoutH="118" targetType="dialog" width="100%">
         <thead>
@@ -22,7 +36,7 @@
                 <td>{{$group['name']}}</td>
                 <td>{{$group['desp']}}</td>
                 <td>{{$group['created_at']}}</td>
-                <td><a class="btnSelect" href="javascript:$.bringBack({id:'{{$group['id']}}', Name:'{{$group['name']}}'})" title="查找带回">选择</a></td>
+                <td><a class="btnSelect" href="javascript:$.bringBack({id:'{{$group['id']}}', name:'{{$group['name']}}'})" title="查找带回">选择</a></td>
             </tr>
             @endforeach
         </tbody>

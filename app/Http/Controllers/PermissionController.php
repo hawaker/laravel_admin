@@ -35,7 +35,25 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        $input=$request->input();
+        if(isset($input['org1.id'])&&isset($input['name'])){
+            $group= permission_group::find($input['org1.id'])->count();
+            if($group<=0){
+                return ajaxDone::success(false)->message("权限分组错误!");
+            }
+            $exists= permissions::where("name",$input['name'])->count();
+            if($exists>0){
+                return ajaxDone::success(false)->message("权限名称重复!");
+            }
+            $p=new permissions();
+            $p->name=$input['name'];
+            $p->groups_id=$input['org1.id'];
+            if(isset($input['desp'])){
+                $p->desp=$input['desp'];
+            }
+            $done=$p->save();
+            return ajaxDone::success($done)->autoClose();
+        }
     }
 
     /**
