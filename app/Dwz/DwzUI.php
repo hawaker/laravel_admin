@@ -15,7 +15,8 @@ class DwzUI extends DwzBase implements Dwz {
     public $loginUrl;
     public $statusCode;
 
-    public function __construct(Array $arr) {
+    public function __construct($arr) {
+        dd($arr);
         $this->pageInfo = new pageInfo($arr['pageInfo']);
         $this->callback = $arr['callback'];
         $this->debug = $arr['debug'];
