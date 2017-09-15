@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class permissions extends Model {
 
     use SoftDeletes;
-    //
+    public function dwzOrder(){
+        $dwz= app("App\Dwz\Dwz");
+    }
 }

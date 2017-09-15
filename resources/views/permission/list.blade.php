@@ -1,9 +1,6 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
     <form id="pagerForm" action="permission/show/0" method="post" onsubmit="return divSearch(this, navTabAjaxDone);">
-        <input type="hidden" name="page" value="1" />
-        <input type="hidden" name="numPerPage" value="${model.numPerPage}" />
-        <input type="hidden" name="orderField" value="${param.orderField}" />
-        <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
+        {!!$dwzFormBase!!}
         <div class="searchBar">
             <table class="searchContent">
                 <tr>

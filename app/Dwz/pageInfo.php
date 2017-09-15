@@ -8,7 +8,6 @@
 
 namespace App\Dwz;
 
-use App\Dwz\Contracts\pageInfo;
 use App\Dwz\Contracts\base;
 
 /**
@@ -16,20 +15,16 @@ use App\Dwz\Contracts\base;
  *
  * @author V
  */
-class pageInfo extends DwzBase implements pageInfo {
+class pageInfo extends DwzBase implements Contracts\pageInfo {
 
-    public $pageNum;
-    public $numPerPage;
-    public $orderField;
-    public $orderDirection;
+    public $pageNum="pageNum";
+    public $numPerPage="numPerPage";
+    public $orderField="orderField";
+    public $orderDirection="orderDirection";
 
-    public function __construct($arr = "") {
-        $this->pageNum = isset($arr['pageNum']) ? $arr['pageNum'] : "pageNum";
-        $this->numPerPage = isset($arr['numPerPage']) ? $arr['numPerPage'] : "numPerPage";
-        $this->orderField = isset($arr['orderField']) ? $arr['orderField'] : 'orderField';
-        $this->orderDirection = isset($arr['orderDirection']) ? $arr['orderDirection'] : 'orderDirection';
+    public function __construct($arr=""){
+        parent::__construct($arr);
     }
-
     public function getNumPerPage() {
         return $this->numPerPage;
     }

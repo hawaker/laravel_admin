@@ -7,16 +7,15 @@
  */
 
 namespace App\Dwz;
-use App\Dwz\Contracts\ui;
 /**
  * Description of ui
  *
  * @author V
  */
-class ui extends DwzBase implements ui{
+class ui extends DwzBase implements Contracts\ui{
     public $hideMode="offsets";
     public function __construct($arr=""){
-        $this->init($arr);
+        parent::__construct($arr);
     }
     //put your code here
     public function getHideMode() {

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class roles extends Model {
 
-    use SoftDeletes;S
+    use SoftDeletes;
     //
 }

@@ -7,18 +7,17 @@
  */
 
 namespace App\Dwz;
-use App\Dwz\Contracts\keys;
+
 /**
  * Description of keys
  *
  * @author V
  */
-class keys extends DwzBase implements keys{
-    public $message;
-    public $statusCode;
-    public function __construct($statusCode,$message){
-        $this->message=$message;
-        $this->statusCode=$statusCode;
+class keys extends DwzBase implements Contracts\keys{
+    public $message="message";
+    public $statusCode="statusCode";
+    public function __construct($arr=""){
+        parent::__construct($arr);
     }
     public function getMessage() {
         return $this->message;

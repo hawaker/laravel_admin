@@ -7,21 +7,19 @@
  */
 
 namespace App\Dwz;
-use App\Dwz\Contracts\statusCode;
+
 /**
  * Description of statusCode
  *
  * @author V
  */
-class statusCode extends DwzBase implements statusCode{
+class statusCode extends DwzBase implements Contracts\statusCode{
     //put your code here
-    public $error;
-    public $ok;
-    public $timeout;
+    public $error=300;
+    public $ok=200;
+    public $timeout=301;
     public function __construct($arr=""){
-        $this->ok=isset($arr['ok'])?$arr['ok']:200;
-        $this->error=isset($arr['error'])?$arr['error']:300;
-        $this->timeout=isset($arr['timeout'])?$arr['timeout']:301;
+        parent::__construct($arr);
     }
     public function getERROR() {
         return $this->error;
