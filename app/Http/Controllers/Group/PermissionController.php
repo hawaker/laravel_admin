@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\permission_group;
 use App\Utils\ajaxDone;
-
+use App\Dwz\DwzUI;
 class PermissionController extends Controller {
 
     /**
@@ -14,7 +14,8 @@ class PermissionController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request) {
+    public function index(Request $request, DwzUI $dwz) {
+        var_dump($dwz); 
         $groups = permission_group::paginate(20);
         return view("permission/group/index", compact("groups"));
     }

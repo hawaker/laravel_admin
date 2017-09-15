@@ -4,7 +4,7 @@ namespace App\Dwz;
 
 use App\Dwz\Contracts\Dwz;
 
-class Dwz extends DwzBase implements Dwz {
+class DwzUI extends DwzBase implements Dwz {
 
     public $pageInfo;
     public $callback;

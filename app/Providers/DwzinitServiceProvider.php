@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Dwz\Dwz;
+use App\Dwz\DwzUI;
 
 class DwzinitServiceProvider extends ServiceProvider
 {
@@ -26,7 +26,7 @@ class DwzinitServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Dwz::class,function($app){
-           return new Dwz(config("dwz")); 
+           return new DwzUI(config("dwz")); 
         });
     }
 }
