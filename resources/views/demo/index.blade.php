@@ -9,11 +9,9 @@
             <link href="themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
             <link href="themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
             <link href="uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
-            <!--[if IE]>
-            <link href="themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
-            <![endif]-->
+            <!--[if IE]><link href="themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/><![endif]-->
 
-<!--[if lt IE 9]><script src="js/speedup.js" type="text/javascript"></script><script src="js/jquery-1.11.3.min.js" type="text/javascript"></script><![endif]-->
+            <!--[if lt IE 9]><script src="js/speedup.js" type="text/javascript"></script><script src="js/jquery-1.11.3.min.js" type="text/javascript"></script><![endif]-->
             <!--[if gte IE 9]><!--><script src="js/jquery-2.1.4.min.js" type="text/javascript"></script><!--<![endif]-->
 
             <script src="js/jquery.cookie.js" type="text/javascript"></script>
@@ -73,26 +71,24 @@
             <script src="js/dwz.regional.zh.js" type="text/javascript"></script>
 
             <script type="text/javascript">
-    $(function () {
-        DWZ.init("dwz.frag.xml", {
-            loginUrl: "login_dialog.html", loginTitle: "登录", // 弹出登录对话框
-            //		loginUrl:"login.html",	// 跳到登录页面
-            statusCode: {ok: 200, error: 300, timeout: 301}, //【可选】
-            pageInfo: {pageNum: "page", numPerPage: "numPerPage", orderField: "orderField", orderDirection: "orderDirection"}, //【可选】
-            keys: {statusCode: "statusCode", message: "message"}, //【可选】
-            ui: {hideMode: 'offsets'}, //【可选】hideMode:navTab组件切换的隐藏方式，支持的值有’display’，’offsets’负数偏移位置的值，默认值为’display’
-            debug: false, // 调试模式 【true|false】
-            callback: function () {
-                initEnv();
-                $("#themeList").theme({themeBase: "themes"}); // themeBase 相对于index页面的主题base路径
-            }
-        });
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    });
+                $(function () {
+                        DWZ.init("dwz.frag.xml", {
+                            loginUrl: "login_dialog.html", 
+                            loginTitle: "登录超时,请登录", // 弹出登录对话框
+                            statusCode: {ok: 200, error: 300, timeout: 301}, //【可选】
+                            pageInfo: {pageNum: "page", numPerPage: "numPerPage", orderField: "orderField", orderDirection: "orderDirection"}, //【可选】
+                            keys: {statusCode: "statusCode", message: "message"}, //【可选】
+                            ui: {hideMode: 'offsets'}, //【可选】hideMode:navTab组件切换的隐藏方式，支持的值有’display’，’offsets’负数偏移位置的值，默认值为’display’
+                            debug: true, // 调试模式 【true|false】
+                            callback: function () {
+                                initEnv();
+                                $("#themeList").theme({themeBase: "themes"}); // themeBase 相对于index页面的主题base路径
+                            }
+                    });
+                    $.ajaxSetup({
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+                    });
+                });
             </script>
     </head>
     <body>
@@ -127,11 +123,8 @@
                         <li theme="azure"><div>天蓝</div></li>
                     </ul>
                 </div>
-
                 <!-- navMenu -->
-
             </div>
-
             <div id="leftside">
                 <div id="sidebar_s">
                     <div class="collapse">
@@ -309,8 +302,6 @@
                                 <p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
                             </div>
                             <div class="pageFormContent" layoutH="80" style="margin-right:230px">
-
-
                                 <h2>DWZ系列开源项目:</h2>
                                 <div class="unit"><a href="https://git.oschina.net/dwzteam/dwz_jui" target="_blank">dwz富客户端框架 - jUI</a></div>
                                 <div class="unit"><a href="https://git.oschina.net/dwzteam/dwz_group" target="_blank">DWZ框架 + ThinkPHP 实现小组工作日志系统</a></div>
@@ -361,10 +352,7 @@ Error loading XML document: dwz.frag.xml
                     </div>
                 </div>
             </div>
-
         </div>
-
         <div id="footer">Copyright &copy; 2010 <a href="demo_page2.html" target="dialog">DWZ团队</a> 京ICP备15053290号-2</div>
-
     </body>
 </html>
