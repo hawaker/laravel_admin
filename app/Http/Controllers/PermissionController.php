@@ -15,8 +15,6 @@ class PermissionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $p=new permissions();
-        $p->dwzOrder();
         $groups = permission_group::all();
         return view("permission/index", compact('groups'));
     }
@@ -77,9 +75,9 @@ class PermissionController extends Controller {
         }
         if ($group > 0) {
             if ($id == 0) {
-                $permissions = permissions::paginate(10);
+                $permissions = permissions::paginate(20);
             } else {
-                $permissions = permissions::where("groups_id", $id)->paginate(10);
+                $permissions = permissions::where("groups_id", $id)->paginate(20);
             }
             return view("permission/list", compact("permissions", "id"));
         } else {

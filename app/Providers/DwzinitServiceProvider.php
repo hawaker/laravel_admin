@@ -14,7 +14,12 @@ class DwzinitServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot(Dwz $dwz) {
+        $dwz->orderField=request($dwz->pageInfo->orderField,"");
+        $dwz->orderDirection=request($dwz->pageInfo->orderDirection,$dwz->orderDirection);
+        $dwz->numPerPage=request($dwz->pageInfo->numPerPage,$dwz->numPerPage);
         View::share("dwzFormBase", $dwz->getFormBase());
+        View::share("dwzOrderField",$dwz->orderField);
+        View::share("dwzOrderDirection",$dwz->orderDirection);
     }
 
     /**

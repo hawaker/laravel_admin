@@ -14,7 +14,7 @@ Route::get("/", function() {
     return view("welcome");
 });
 Route::any("{file}.html", function($file) {
-    return view("demo/".$file);
+    return view("demo/" . $file);
 });
 Route::any("{folder}/{file}.html", function($folder, $file) {
     return view($folder . "/" . $file);
@@ -29,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix("permission")->group(function() {
     $c = "PermissionController@";
-    Route::any("index", $c . "index"); 
+    Route::any("index", $c . "index");
     Route::get("create", $c . "create");
     Route::post("create", $c . "store");
     Route::prefix("groups")->namespace("Group")->group(function() {
@@ -47,6 +47,12 @@ Route::prefix("permission")->group(function() {
 
 Route::prefix("role")->group(function() {
     $c = "RoleController@";
+    Route::prefix("groups")->namespace("Group")->group(function() {
+        $c = "RoleController@";
+        Route::match(['post', 'get'], '/', $c . "index");
+        Route::get("create", $c . "create");
+        Route::post("create", $c . "store");
+    });
     Route::get("index", $c . "index");
 });
 Route::prefix("user")->group(function() {

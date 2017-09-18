@@ -24,3 +24,8 @@
         <div class="tabsFooter"><div class="tabsFooterContent"></div></div>
     </div>
 </div>
+<script type='text/javascript'>
+        $("#permissionBox").loadUrl("permission/show/0",{},function(){
+            $("#permissionBox").find("[layoutH]").layoutH();
+        });
+</script>

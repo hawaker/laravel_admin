@@ -1,12 +1,13 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
-    <form id="pagerForm" action="permission/show/0" method="post" onsubmit="return divSearch(this, navTabAjaxDone);">
+    <form id="pagerForm" method="post" onsubmit="return divSearch(this,'permissionBox');" action="permission/show/0">
         {!!$dwzFormBase!!}
         <div class="searchBar">
             <table class="searchContent">
                 <tr>
                     <td class="dateRange">
                         添加日期:
-                        <input type="text" value="" readonly="readonly" class="date" name="dateStart"><span class="limit">-</span><input type="text" value="" readonly="readonly" class="date" name="dateEnd">
+                        <input type="text" value="" readonly="readonly" class="date" name="dateStart"><span class="limit">-</span>
+                        <input type="text" value="" readonly="readonly" class="date" name="dateEnd">
                     </td>
                     <td>权限名称：<input type="text" name="name" /></td>
                     <td><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></td>
@@ -24,13 +25,13 @@
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>
     </div>
-    <table class="table" width="99%" layoutH="150">
+    <table class="table" width="99%" layoutH="150" rel='permissionBox'>
         <thead>
             <tr>
-                <th width="80">序号</th>
-                <th width="120" orderField="number" class="asc">名称</th>
-                <th orderField="name">描述</th>
-                <th width="100">添加日期</th>
+                <th width="80" orderField="id" @if($dwzOrderField=="id") class="{{$dwzOrderDirection}}" @endif>序号</th>
+                <th width="120" orderField="name" @if($dwzOrderField=="name") class="{{$dwzOrderDirection}}" @endif>名称</th>
+                <th >描述</th>
+                <th width="160" orderField="created_at" @if($dwzOrderField=="created_at") class="{{$dwzOrderDirection}}" @endif>添加日期</th>
                 <th width="100">更多操作</th>
             </tr>
         </thead>

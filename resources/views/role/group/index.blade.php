@@ -1,5 +1,5 @@
 <div class="pageHeader" style="border:1px #B8D0D6 solid">
-    <form id="pagerForm" method="post" onsubmit="return navTabSearch(this);" action="permission/groups">
+    <form id="pagerForm" method="post" onsubmit="return navTabSearch(this);" action="role/groups">
         {!!$dwzFormBase!!}
         <div class="searchBar">
             <table class="searchContent">
@@ -15,7 +15,7 @@
 <div class="pageContent" style="border-left:1px #B8D0D6 solid;border-right:1px #B8D0D6 solid">
     <div class="panelBar">
         <ul class="toolBar">
-            <li><a class="add" href="permission/groups/create" target="dialog" mask="true"><span>添加权限分组</span></a></li>
+            <li><a class="add" href="role/groups/create" target="dialog" mask="true"><span>添加角色分组</span></a></li>
             <li class="line">line</li>
             <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
         </ul>

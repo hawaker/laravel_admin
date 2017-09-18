@@ -6,7 +6,6 @@ use App\Dwz\pageInfo;
 use App\Dwz\keys;
 use App\Dwz\ui;
 use App\Dwz\statusCode;
-use Illuminate\Database\Eloquent\Model;
 
 class Dwz extends DwzBase implements Contracts\Dwz {
 
@@ -20,7 +19,10 @@ class Dwz extends DwzBase implements Contracts\Dwz {
     public $statusCode;
     private $classes = ["pageInfo" => pageInfo::class, "ui" => ui::class, "keys" => keys::class, "statusCode" => statusCode::class];
     private $field = ['callback', 'debug', 'loginTitle', 'loginUrl'];
-    public $request;
+    
+    public $orderField;
+    public $orderDirection="ASC";
+    public $numPerPage=20;
 
     public function __construct(array $arr = []) {
         foreach ($this->classes as $key=> $value) {
@@ -66,8 +68,9 @@ class Dwz extends DwzBase implements Contracts\Dwz {
     }
     public function getFormBase(){
         return '<input type="hidden" name="'.$this->pageInfo->pageNum.'" value="1" />'
-        . '<input type="hidden" name="'.$this->pageInfo->numPerPage.'" value="${model.numPerPage}" />'
-        . '<input type="hidden" name="'.$this->pageInfo->orderField.'" value="${param.orderField}" />'
-        . '<input type="hidden" name="'.$this->pageInfo->orderDirection.'" value="${param.orderDirection}" />';
+        . '<input type="hidden" name="'.$this->pageInfo->numPerPage.'" value="'.$this->numPerPage.'" />'
+        . '<input type="hidden" name="'.$this->pageInfo->orderField.'" value="'.$this->orderField.'" />'
+        . '<input type="hidden" name="'.$this->pageInfo->orderDirection.'" value="'.$this->orderDirection.'" />';
     }
+
 }

@@ -2,11 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class user_roles extends Model {
-
-    use SoftDeletes;
+class user_roles extends ModelBase {
     //
 }

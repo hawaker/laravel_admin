@@ -14,7 +14,7 @@ class PermissionController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Dwz $dwz) {
+    public function index(Request $request) {
         $groups = permission_group::paginate(20);
         return view("permission/group/index", compact("groups"));
     }
@@ -94,7 +94,7 @@ class PermissionController extends Controller {
         //
     }
     public function lookup(){
-        $groups= permission_group::all()->toArray();
+        $groups= permission_group::all()->paginate(20);
         return view("permission/group/lookup", compact("groups"));
     }
 }

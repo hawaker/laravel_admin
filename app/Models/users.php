@@ -29,4 +29,16 @@ class users extends Authenticatable {
         'password', 'remember_token',
     ];
 
+    protected static function boot() {
+        parent::boot();
+        static::addGlobalScope(function(Builder $builder) {
+            $dwz = app("App\Dwz\Dwz");
+            $orderField = request($dwz->pageInfo->orderField);
+            if ($orderField) {
+                $orderDirection = request($dwz->pageInfo->orderDirection) ? request($dwz->pageInfo->orderDirection) : $dwz->defaultOrderDirection;
+                $builder->orderBy($orderField, $orderDirection);
+            }
+        });
+    }
+
 }
